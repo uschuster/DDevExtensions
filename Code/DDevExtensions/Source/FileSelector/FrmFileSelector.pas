@@ -151,7 +151,6 @@ type
     FSortColumn: Integer;
     FSortAsc: Boolean;
 
-    FAllData: TInfoList;
     FCurrentData: TInfoList;
     FResourceTypeThread: TResourceTypeThread;
     FEditor: IOTASourceEditor;
@@ -161,6 +160,7 @@ type
     procedure RemoveUsesUnits(Writer: IOTAEditWriter; StopIndex: Integer; DeleteUsesList: TList;
       UsesList: TUsesList);
   protected
+    FAllData: TInfoList;
     function FilterInfo(Info: TInfo; var NewSelLen: Integer): Boolean;
     function FilterListViewData(S: string): Boolean;
 

@@ -33,7 +33,7 @@ uses
   FrmeOptionPageOldPalette,
   {$IFEND}
   StartParameterManagerReg, FrmReloadFiles{, PrjDesktopState},
-  CodeInsightHandling;
+  CodeInsightHandling, DebuggeeOpenFile;
 
 procedure RegisterIDEPlugins;
 var
@@ -138,6 +138,8 @@ begin
 
     if DisabledPlugins.IndexOf('CodeInsightHandling') = -1 then
       RegisterLateLoader(CodeInsightHandling.InitPlugin);
+
+    RegisterLateLoader(DebuggeeOpenFile.InitPlugin);
 
   finally
     DisabledPlugins.Free;
